@@ -19,5 +19,15 @@ jobs:
 #      name: Adding Known Hosts
 #        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       
-      - name: Deploy with rsync
-        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:C:\Users\DIICA\.ssh\tmp
+#       name: Deploy with rsync
+#        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:C:\Users\DIICA\.ssh\tmp
+
+      - name: Dir
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: "DIICA"
+          key: ${{ secrets.SSH_SECRET }}
+          port: 22
+          script: |
+            dir
