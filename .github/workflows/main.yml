@@ -20,6 +20,7 @@ jobs:
 #        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
         run: |
           cd ~/.ssh
+          rm ./known_hosts
           ls
           ssh-keyscan -H ${{ secrets.SSH_HOST }}
       
