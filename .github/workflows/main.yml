@@ -22,7 +22,7 @@ jobs:
           cd ~/.ssh
           rm ./known_hosts
           ls
-          ssh-keyscan -H 192.168.100.174
+          ssh-keyscan -H 154.72.171.229
       
 #       name: Deploy with rsync
 #        run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:C:\Users\DIICA\.ssh\tmp
